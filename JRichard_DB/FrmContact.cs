@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Functionality;
+using CPSTN_ProductManagement;
 namespace JRichard_DB {
     public partial class FrmContact : Form {
         public FrmContact() {
