@@ -154,6 +154,10 @@
       <Project>{6c0882b1-ef80-4e26-87e9-66faa9e370d3}</Project>
       <Name>CPSTN_ProductManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JRichard_DB_Classes\JRichard_DB_Classes.csproj">
+      <Project>{2e59eac5-7ba9-4139-a1e8-ab2395c1f570}</Project>
+      <Name>JRichard_DB_Classes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JRichard_DB_Tables\JRichard_DB_Tables.csproj">
       <Project>{cd8268c4-cf72-4924-ac10-1aa496bc6789}</Project>
       <Name>JRichard_DB_Tables</Name>

@@ -17,6 +17,5 @@ namespace JRichard_DB_Tables {
             }
             return sqlConnection;
         }
-        
     }
 }

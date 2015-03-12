@@ -8,10 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPSTN_ProductManagement;
+using Functionality;
 namespace JRichard_DB {
     public partial class FrmContact : Form {
+        public Contact contact;
         public FrmContact() {
             InitializeComponent();
+        }
+        public void LoadContact(int ID) {
+            if (ID < 1) {
+                ID = 1;
+            }
         }
         private void BtnSave_Click(object sender, EventArgs e) {
             //Save

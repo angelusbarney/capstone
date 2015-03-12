@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E59EAC5-7BA9-4139-A1E8-AB2395C1F570}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JRichard_DB_Classes</RootNamespace>
+    <AssemblyName>JRichard_DB_Classes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillOfMaterials.cs" />
+    <Compile Include="Catalogue.cs" />
+    <Compile Include="CatalogueLine.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="Finding.cs" />
+    <Compile Include="FindingOrder.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductOrderLine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SLA.cs" />
+    <Compile Include="Supplier.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPSTN_ProductManagement\CPSTN_ProductManagement.csproj">
+      <Project>{6c0882b1-ef80-4e26-87e9-66faa9e370d3}</Project>
+      <Name>CPSTN_ProductManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JRichard_DB_Tables\JRichard_DB_Tables.csproj">
+      <Project>{cd8268c4-cf72-4924-ac10-1aa496bc6789}</Project>
+      <Name>JRichard_DB_Tables</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

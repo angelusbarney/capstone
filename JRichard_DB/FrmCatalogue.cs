@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPSTN_ProductManagement;
+using Functionality;
 namespace JRichard_DB {
     public partial class FrmCatalogue : Form {
         FrmProduct FormProduct;

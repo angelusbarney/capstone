@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRichard_DB_UI", "JRichard_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRichard_DB_Tables", "JRichard_DB_Tables\JRichard_DB_Tables.csproj", "{CD8268C4-CF72-4924-AC10-1AA496BC6789}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRichard_DB_Classes", "JRichard_DB_Classes\JRichard_DB_Classes.csproj", "{2E59EAC5-7BA9-4139-A1E8-AB2395C1F570}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CD8268C4-CF72-4924-AC10-1AA496BC6789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8268C4-CF72-4924-AC10-1AA496BC6789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8268C4-CF72-4924-AC10-1AA496BC6789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E59EAC5-7BA9-4139-A1E8-AB2395C1F570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E59EAC5-7BA9-4139-A1E8-AB2395C1F570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E59EAC5-7BA9-4139-A1E8-AB2395C1F570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E59EAC5-7BA9-4139-A1E8-AB2395C1F570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
