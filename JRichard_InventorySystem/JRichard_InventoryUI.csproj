@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A53C4D6-5679-4FE2-9A6D-F529E974F9E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JRichard_InventoryUI</RootNamespace>
+    <AssemblyName>JRichard_InventorySystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddOrder.Designer.cs">
+      <DependentUpon>FrmAddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContacts.Designer.cs">
+      <DependentUpon>FrmContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditFinding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditFinding.Designer.cs">
+      <DependentUpon>FrmEditFinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditSLA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditSLA.Designer.cs">
+      <DependentUpon>FrmEditSLA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFinding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFinding.Designer.cs">
+      <DependentUpon>FrmFinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventoryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventoryMenu.Designer.cs">
+      <DependentUpon>FrmInventoryMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrderLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderLine.Designer.cs">
+      <DependentUpon>FrmOrderLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrders.Designer.cs">
+      <DependentUpon>FrmOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParent.Designer.cs">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSLAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSLAs.Designer.cs">
+      <DependentUpon>FrmSLAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupplier.Designer.cs">
+      <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddOrder.resx">
+      <DependentUpon>FrmAddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContacts.resx">
+      <DependentUpon>FrmContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditFinding.resx">
+      <DependentUpon>FrmEditFinding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditSLA.resx">
+      <DependentUpon>FrmEditSLA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFinding.resx">
+      <DependentUpon>FrmFinding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventoryMenu.resx">
+      <DependentUpon>FrmInventoryMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderLine.resx">
+      <DependentUpon>FrmOrderLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrders.resx">
+      <DependentUpon>FrmOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParent.resx">
+      <DependentUpon>FrmParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSLAs.resx">
+      <DependentUpon>FrmSLAs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupplier.resx">
+      <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JRichard_InventoryClasses\JRichard_InventoryClasses.csproj">
+      <Project>{f1a4f334-8e78-4d0a-bdd9-8cc68fab8f8e}</Project>
+      <Name>JRichard_InventoryClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
