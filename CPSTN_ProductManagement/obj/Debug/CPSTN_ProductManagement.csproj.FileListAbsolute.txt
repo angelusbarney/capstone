@@ -8,3 +8,4 @@ C:\Users\Angelus\Documents\Visual Studio 2013\Projects\CPSTN_ProductManagement\C
 C:\Users\Angelus\Documents\Visual Studio 2013\Projects\CPSTN_ProductManagement\CPSTN_ProductManagement\obj\Debug\CPSTN_ProductManagement.Form1.resources
 C:\Users\Angelus\documents\visual studio 2013\Projects\CPSTN_ProductManagement\CPSTN_ProductManagement\bin\Debug\Product.mdf
 C:\Users\Angelus\documents\visual studio 2013\Projects\CPSTN_ProductManagement\CPSTN_ProductManagement\bin\Debug\Product_log.ldf
+C:\Users\Angelus\Documents\Visual Studio 2013\Projects\CPSTN_ProductManagement\CPSTN_ProductManagement\obj\Debug\CPSTN_ProductManagement.csprojResolveAssemblyReference.cache
