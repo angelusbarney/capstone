@@ -355,7 +355,7 @@
             // 
             // calOrderDate
             // 
-            this.calOrderDate.Location = new System.Drawing.Point(79, 95);
+            this.calOrderDate.Location = new System.Drawing.Point(14, 120);
             this.calOrderDate.MaxSelectionCount = 1;
             this.calOrderDate.Name = "calOrderDate";
             this.calOrderDate.TabIndex = 27;

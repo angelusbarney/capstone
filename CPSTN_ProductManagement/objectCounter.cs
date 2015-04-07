@@ -78,6 +78,7 @@ namespace CPSTN_ProductManagement
             try
             {
                 clientSet.Remove(clientSet.ElementAt(index));
+                clientID.Remove(clientID.ElementAt(index));
             }
             catch (Exception e) { }
         }
@@ -86,6 +87,7 @@ namespace CPSTN_ProductManagement
             try 
             {
                 productSet.Remove(productSet.ElementAt(index));
+                productID.Remove(productID.ElementAt(index)); 
             }
             catch (Exception e) { }
         }
