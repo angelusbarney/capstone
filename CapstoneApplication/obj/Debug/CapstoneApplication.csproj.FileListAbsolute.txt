@@ -1,0 +1,8 @@
+c:\users\angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\bin\Debug\CapstoneApplication.exe.config
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\obj\Debug\CapstoneApplication.csprojResolveAssemblyReference.cache
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\obj\Debug\CapstoneApplication.Form1.resources
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\obj\Debug\CapstoneApplication.csproj.GenerateResource.Cache
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\bin\Debug\CapstoneApplication.exe
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\bin\Debug\CapstoneApplication.pdb
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\obj\Debug\CapstoneApplication.exe
+C:\Users\Angelus\documents\visual studio 2013\Projects\CapstoneApplication\CapstoneApplication\obj\Debug\CapstoneApplication.pdb
