@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using JRichard_InventoryClasses;
 namespace JRichard_InventoryUI {
     public partial class FrmSupplier : Form {
+        bool Old = false;
         Supplier EditSupplier;
         int ID;
         public FrmSupplier() {
@@ -18,8 +19,8 @@ namespace JRichard_InventoryUI {
         public void AcceptID(int ID) {
             this.ID = ID;
             EditSupplier = new Supplier();
-            if (ID > -1) {
-                EditSupplier.Initialize(ID);
+            if (EditSupplier.Initialize(ID)) {
+                Old = true;
                 LblSupplier.Text = "Edit supplier #" + ID.ToString();
                 TxtName.Text = EditSupplier.GetName();
                 TxtDescription.Text = EditSupplier.GetDescription();
@@ -38,12 +39,12 @@ namespace JRichard_InventoryUI {
         }
         private void BtnSave_Click(object sender, EventArgs e) {
             bool Work = true;
-            if (ID > -1) {
+            if (Old) {
                 Work = EditSupplier.Edit(ID, TxtName.Text, TxtDescription.Text, TxtAddress1.Text,
                     TxtAddress2.Text, TxtCity.Text, TxtRegion.Text, TxtCountry.Text, TxtPostalCode.Text,
                     TxtPhone1.Text, TxtPhone2.Text, TxtFax.Text, TxtStatus.Text, TxtNotes.Text);
             } else {
-                Work = EditSupplier.Add(TxtName.Text, TxtDescription.Text, TxtAddress1.Text,
+                Work = EditSupplier.Add(ID, TxtName.Text, TxtDescription.Text, TxtAddress1.Text,
                     TxtAddress2.Text, TxtCity.Text, TxtRegion.Text, TxtCountry.Text, TxtPostalCode.Text,
                     TxtPhone1.Text, TxtPhone2.Text, TxtFax.Text, TxtStatus.Text, TxtNotes.Text);
             }

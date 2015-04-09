@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using JRichard_InventoryClasses;
 namespace JRichard_InventoryUI {
     public partial class FrmAddOrder : Form {
+        bool Old = false;
         FindingOrder Order;
         int ID;
         public FrmAddOrder() {
@@ -18,8 +19,8 @@ namespace JRichard_InventoryUI {
         public void AcceptID(int ID) {
             this.ID = ID;
             Order = new FindingOrder();
-            if (ID > -1) {
-                Order.Initialize(ID);
+            if (Order.Initialize(ID)) {
+                Old = true;
                 LblOrder.Text = "Edit order #" + Order.GetID().ToString();
                 TxtNotes.Text = Order.GetNotes();
                 TxtStatus.Text = Order.GetStatus();
@@ -27,10 +28,10 @@ namespace JRichard_InventoryUI {
         }
         private void BtnSave_Click(object sender, EventArgs e) {
             bool Work = true;
-            if (ID > -1) {
+            if (Old) {
                 Work = Order.Edit(ID, TxtStatus.Text, TxtNotes.Text);
             } else {
-                Work = Order.Add(DateTime.Now, TxtStatus.Text, TxtNotes.Text);
+                Work = Order.Add(ID, DateTime.Now, TxtStatus.Text, TxtNotes.Text);
             }
             if (Work) {
                 this.Close();

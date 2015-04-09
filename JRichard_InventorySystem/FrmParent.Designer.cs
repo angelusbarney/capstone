@@ -33,6 +33,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productMgmtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventoryToolStripMenuItem});
+            this.inventoryToolStripMenuItem,
+            this.productMgmtToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.openToolStripMenuItem.Text = "Open";
@@ -60,6 +62,13 @@
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
+            // 
+            // productMgmtToolStripMenuItem
+            // 
+            this.productMgmtToolStripMenuItem.Name = "productMgmtToolStripMenuItem";
+            this.productMgmtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productMgmtToolStripMenuItem.Text = "Product Mgmt";
+            this.productMgmtToolStripMenuItem.Click += new System.EventHandler(this.productMgmtToolStripMenuItem_Click);
             // 
             // FrmParent
             // 
@@ -83,6 +92,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productMgmtToolStripMenuItem;
     }
 }
 

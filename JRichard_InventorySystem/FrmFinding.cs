@@ -41,7 +41,7 @@ namespace JRichard_InventoryUI {
                 FormEditFinding = new FrmEditFinding();
                 FormEditFinding.MdiParent = this.MdiParent;
                 FormEditFinding.FormClosed += FormEditFinding_FormClosed;
-                FormEditFinding.AcceptID(-1);
+                FormEditFinding.AcceptID(LstFinding.Items.Count);
                 FormEditFinding.Show();
             } else {
                 FormEditFinding.Activate();

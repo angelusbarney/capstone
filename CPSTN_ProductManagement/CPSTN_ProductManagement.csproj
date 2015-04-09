@@ -147,12 +147,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JRichard_DB_Tables\JRichard_DB_Tables.csproj">
-      <Project>{cd8268c4-cf72-4924-ac10-1aa496bc6789}</Project>
-      <Name>JRichard_DB_Tables</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -22,7 +22,7 @@ namespace JRichard_InventoryUI {
                 FormSupplier = new FrmSupplier();
                 FormSupplier.MdiParent = this.MdiParent;
                 FormSupplier.FormClosed += FormSupplier_FormClosed;
-                FormSupplier.AcceptID(-1);
+                FormSupplier.AcceptID(CmbContacts.Items.Count);
                 FormSupplier.Show();
             } else {
                 FormSupplier.Activate();
@@ -39,7 +39,7 @@ namespace JRichard_InventoryUI {
                     FormSupplier = new FrmSupplier();
                     FormSupplier.MdiParent = this.MdiParent;
                     FormSupplier.FormClosed += FormSupplier_FormClosed;
-                    FormSupplier.AcceptID(-1);
+                    FormSupplier.AcceptID(CmbContacts.Items.Count);
                     FormSupplier.Show();
                 } else {
                     FormSupplier.Activate();

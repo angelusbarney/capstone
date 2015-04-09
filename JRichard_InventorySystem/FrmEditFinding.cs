@@ -11,6 +11,7 @@ using JRichard_InventoryClasses;
 namespace JRichard_InventoryUI {
     public partial class FrmEditFinding : Form {
         Finding EditFinding;
+        bool Old = true;
         int ID;
         public FrmEditFinding() {
             InitializeComponent();
@@ -18,8 +19,8 @@ namespace JRichard_InventoryUI {
         public void AcceptID(int ID) {
             this.ID = ID;
             EditFinding = new Finding();
-            if (ID > -1) {
-                EditFinding.Initialize(ID);
+            if (EditFinding.Initialize(ID)) {
+                Old = false;
                 LblFinding.Text = "Edit finding #" + ID.ToString();
                 TxtName.Text = EditFinding.GetName();
                 TxtDescription.Text = EditFinding.GetDescription();
@@ -31,12 +32,12 @@ namespace JRichard_InventoryUI {
         }
         private void BtnSave_Click(object sender, EventArgs e) {
             bool Work = true;
-            if (ID > -1) {
+            if (Old) {
                 Work = EditFinding.Edit(ID, TxtName.Text, TxtDescription.Text,
                     Convert.ToDouble(TxtCost.Text), TxtImageFile.Text,
                     TxtColour.Text, Convert.ToInt32(TxtQuantity.Text));
             } else {
-                Work = EditFinding.Add(TxtName.Text, TxtDescription.Text,
+                Work = EditFinding.Add(ID, TxtName.Text, TxtDescription.Text,
                     Convert.ToDouble(TxtCost.Text), TxtImageFile.Text,
                     TxtColour.Text, Convert.ToInt32(TxtQuantity.Text));
             }

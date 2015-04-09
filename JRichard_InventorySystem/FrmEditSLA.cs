@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using JRichard_InventoryClasses;
 namespace JRichard_InventoryUI {
     public partial class FrmEditSLA : Form {
+        bool Old = false;
         SLA EditSLA;
         Finding[] AllFindings;
         int Findings;
@@ -22,8 +23,8 @@ namespace JRichard_InventoryUI {
         public void AcceptID(int ID) {
             this.ID = ID;
             EditSLA = new SLA();
-            if (ID > -1) {
-                EditSLA.Initialize(ID);
+            if (EditSLA.Initialize(ID)) {
+                Old = true;
                 LblSLA.Text = "Edit SLA #" + EditSLA.GetID().ToString();
                 CmbFinding.Items.Clear();
                 Findings = 0;
@@ -71,12 +72,12 @@ namespace JRichard_InventoryUI {
         }
         private void BtnSave_Click(object sender, EventArgs e) {
             bool Work = true;
-            if (ID > -1) {
+            if (Old) {
                 Work = EditSLA.Edit(ID, AllFindings[CmbFinding.SelectedIndex],
                     AllSuppliers[CmbSupplier.SelectedIndex], TxtDescription.Text,
                     TxtPenalty.Text);
             } else {
-                Work = EditSLA.Add(AllFindings[CmbFinding.SelectedIndex],
+                Work = EditSLA.Add(ID, AllFindings[CmbFinding.SelectedIndex],
                     AllSuppliers[CmbSupplier.SelectedIndex], TxtDescription.Text,
                     TxtPenalty.Text);
             }

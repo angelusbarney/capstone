@@ -52,20 +52,17 @@ namespace JRichard_InventoryClasses {
                     return false;
                 }
             }
-            public bool Add(DateTime OrderDate, string Status, string Notes) {
+            public bool Add(int ID, DateTime OrderDate, string Status, string Notes) {
                 try {
                     TableAdapter = new InventoryDataSet.SP_GetByID_FindingOrderDataTable();
                     this.OrderDate = OrderDate;
                     this.Status = Status;
                     this.Notes = Notes;
-                    int F = 1;
-                    while (TableAdapter.FindByID(F) != null) {
-                        F++;
-                    }
+                    this.ID = ID;
                     TableAdapter.NewRow();
-                    TableAdapter.FindByID(F).OrderDate = OrderDate;
-                    TableAdapter.FindByID(F).Status = Status;
-                    TableAdapter.FindByID(F).Notes = Notes;
+                    TableAdapter.FindByID(ID).OrderDate = OrderDate;
+                    TableAdapter.FindByID(ID).Status = Status;
+                    TableAdapter.FindByID(ID).Notes = Notes;
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

@@ -22,7 +22,7 @@ namespace JRichard_InventoryUI {
                 FormEditSLA = new FrmEditSLA();
                 FormEditSLA.MdiParent = this.MdiParent;
                 FormEditSLA.FormClosed += FormEditSLA_FormClosed;
-                FormEditSLA.AcceptID(-1);
+                FormEditSLA.AcceptID(CmbSLAs.Items.Count);
                 FormEditSLA.Show();
             } else {
                 FormEditSLA.Activate();
@@ -34,7 +34,7 @@ namespace JRichard_InventoryUI {
                     FormEditSLA = new FrmEditSLA();
                     FormEditSLA.MdiParent = this.MdiParent;
                     FormEditSLA.FormClosed += FormEditSLA_FormClosed;
-                    FormEditSLA.AcceptID(-1);
+                    FormEditSLA.AcceptID(CmbSLAs.Items.Count);
                     FormEditSLA.Show();
                 } else {
                     FormEditSLA.Activate();

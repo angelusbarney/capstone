@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using JRichard_InventoryClasses;
 namespace JRichard_InventoryUI {
     public partial class FrmOrderLine : Form {
+        bool Old = false;
         FindingOrderLine OrderLine;
         FindingOrder Order;
         Finding[] AllFindings;
@@ -42,8 +43,8 @@ namespace JRichard_InventoryUI {
             this.ID = ID;
             this.Order = Order;
             OrderLine = new FindingOrderLine();
-            if (ID > -1) {
-                OrderLine.Initialize(ID);
+            if (OrderLine.Initialize(ID)) {
+                Old = true;
                 LblLine.Text = "Edit order line #" + ID.ToString();
                 TxtQuantity.Text = OrderLine.GetQuantity().ToString();
                 CmbFindings.SelectedIndex = OrderLine.GetFinding().GetID();
@@ -51,10 +52,10 @@ namespace JRichard_InventoryUI {
         }
         private void BtnSave_Click(object sender, EventArgs e) {
             bool Work = true;
-            if (ID > -1) {
+            if (Old) {
                 Work = OrderLine.Edit(ID, AllFindings[CmbFindings.SelectedIndex], this.Order, Convert.ToInt32(TxtQuantity.Text));
             } else {
-                Work = OrderLine.Add(AllFindings[CmbFindings.SelectedIndex], this.Order, Convert.ToInt32(TxtQuantity.Text));
+                Work = OrderLine.Add(ID, AllFindings[CmbFindings.SelectedIndex], this.Order, Convert.ToInt32(TxtQuantity.Text));
             }
             if (Work) {
                 this.Close();

@@ -53,7 +53,7 @@ namespace JRichard_InventoryClasses {
                     return false;
                 }
             }
-            public bool Add(string Name, string Description, string Address1, string Address2,
+            public bool Add(int ID, string Name, string Description, string Address1, string Address2,
                 string City, string Region, string Country, string PostalCode, string Phone1, string Phone2,
                 string Fax, string Status, string Notes) {
                 try {
@@ -71,32 +71,25 @@ namespace JRichard_InventoryClasses {
                     SetFax(Fax);
                     SetStatus(Status);
                     SetNotes(Notes);
-                    int F = 1;
-                    while (SuperAdapter.FindById(F) != null) {
-                        F++;
-                    }
+                    this.ID = ID;
                     SuperAdapter.NewRow();
-                    SuperAdapter.FindById(F).Address1 = Address1;
-                    SuperAdapter.FindById(F).Address2 = Address2;
-                    SuperAdapter.FindById(F).City = City;
-                    SuperAdapter.FindById(F).Region = Region;
-                    SuperAdapter.FindById(F).Country = Country;
-                    SuperAdapter.FindById(F).PostalCode = PostalCode;
-                    SuperAdapter.FindById(F).CreationDate = DateTime.Now;
-                    SuperAdapter.FindById(F).Phone1 = Phone1;
-                    SuperAdapter.FindById(F).Phone2 = Phone2;
-                    SuperAdapter.FindById(F).Fax = Fax;
-                    SuperAdapter.FindById(F).Status = Status;
-                    SuperAdapter.FindById(F).Notes = Notes;
+                    SuperAdapter.FindById(ID).Address1 = Address1;
+                    SuperAdapter.FindById(ID).Address2 = Address2;
+                    SuperAdapter.FindById(ID).City = City;
+                    SuperAdapter.FindById(ID).Region = Region;
+                    SuperAdapter.FindById(ID).Country = Country;
+                    SuperAdapter.FindById(ID).PostalCode = PostalCode;
+                    SuperAdapter.FindById(ID).CreationDate = DateTime.Now;
+                    SuperAdapter.FindById(ID).Phone1 = Phone1;
+                    SuperAdapter.FindById(ID).Phone2 = Phone2;
+                    SuperAdapter.FindById(ID).Fax = Fax;
+                    SuperAdapter.FindById(ID).Status = Status;
+                    SuperAdapter.FindById(ID).Notes = Notes;
                     SuperAdapter.AcceptChanges();
-                    int T = 1;
-                    while (TableAdapter.FindByID(T) != null) {
-                        T++;
-                    }
                     TableAdapter.NewRow();
-                    TableAdapter.FindByID(T).Name = Name;
-                    TableAdapter.FindByID(T).Description = Description;
-                    TableAdapter.FindByID(T).ContactID = F;
+                    TableAdapter.FindByID(ID).Name = Name;
+                    TableAdapter.FindByID(ID).Description = Description;
+                    TableAdapter.FindByID(ID).ContactID = ID;
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {
@@ -123,17 +116,17 @@ namespace JRichard_InventoryClasses {
                     SetStatus(Status);
                     SetNotes(Notes);
                     int F = TableAdapter.FindByID(ID).ContactID;
-                    SuperAdapter.FindById(F).Address1 = Address1;
-                    SuperAdapter.FindById(F).Address2 = Address2;
-                    SuperAdapter.FindById(F).City = City;
-                    SuperAdapter.FindById(F).Region = Region;
-                    SuperAdapter.FindById(F).Country = Country;
-                    SuperAdapter.FindById(F).PostalCode = PostalCode;
-                    SuperAdapter.FindById(F).Phone1 = Phone1;
-                    SuperAdapter.FindById(F).Phone2 = Phone2;
-                    SuperAdapter.FindById(F).Fax = Fax;
-                    SuperAdapter.FindById(F).Status = Status;
-                    SuperAdapter.FindById(F).Notes = Notes;
+                    SuperAdapter.FindById(ID).Address1 = Address1;
+                    SuperAdapter.FindById(ID).Address2 = Address2;
+                    SuperAdapter.FindById(ID).City = City;
+                    SuperAdapter.FindById(ID).Region = Region;
+                    SuperAdapter.FindById(ID).Country = Country;
+                    SuperAdapter.FindById(ID).PostalCode = PostalCode;
+                    SuperAdapter.FindById(ID).Phone1 = Phone1;
+                    SuperAdapter.FindById(ID).Phone2 = Phone2;
+                    SuperAdapter.FindById(ID).Fax = Fax;
+                    SuperAdapter.FindById(ID).Status = Status;
+                    SuperAdapter.FindById(ID).Notes = Notes;
                     SuperAdapter.AcceptChanges();
                     TableAdapter.FindByID(ID).Name = Name;
                     TableAdapter.FindByID(ID).Description = Description;

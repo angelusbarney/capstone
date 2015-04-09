@@ -169,6 +169,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CPSTN_ProductManagement\CPSTN_ProductManagement.csproj">
+      <Project>{6c0882b1-ef80-4e26-87e9-66faa9e370d3}</Project>
+      <Name>CPSTN_ProductManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JRichard_InventoryClasses\JRichard_InventoryClasses.csproj">
       <Project>{f1a4f334-8e78-4d0a-bdd9-8cc68fab8f8e}</Project>
       <Name>JRichard_InventoryClasses</Name>

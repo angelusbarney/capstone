@@ -76,7 +76,7 @@ namespace JRichard_InventoryClasses {
                     return false;
                 }
             }
-            public bool Add(string Name, string Description, double Cost, string ImageFile, string Colour, int Quantity) {
+            public bool Add(int ID, string Name, string Description, double Cost, string ImageFile, string Colour, int Quantity) {
                 try {
                     TableAdapter = new InventoryDataSet.SP_GetByID_FindingDataTable();
                     this.Name = Name;
@@ -85,17 +85,14 @@ namespace JRichard_InventoryClasses {
                     this.ImageFile = ImageFile;
                     this.Colour = Colour;
                     this.Quantity = Quantity;
-                    int F = 1;
-                    while (TableAdapter.FindByID(F) != null) {
-                        F++;
-                    }
+                    this.ID = ID;
                     TableAdapter.NewRow();
-                    TableAdapter.FindByID(F).Name = Name;
-                    TableAdapter.FindByID(F).Description = Description;
-                    TableAdapter.FindByID(F).Cost = Convert.ToDecimal(Cost);
-                    TableAdapter.FindByID(F).ImageFile = ImageFile;
-                    TableAdapter.FindByID(F).Colour = Colour;
-                    TableAdapter.FindByID(F).Quantity = Quantity;
+                    TableAdapter.FindByID(ID).Name = Name;
+                    TableAdapter.FindByID(ID).Description = Description;
+                    TableAdapter.FindByID(ID).Cost = Convert.ToDecimal(Cost);
+                    TableAdapter.FindByID(ID).ImageFile = ImageFile;
+                    TableAdapter.FindByID(ID).Colour = Colour;
+                    TableAdapter.FindByID(ID).Quantity = Quantity;
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

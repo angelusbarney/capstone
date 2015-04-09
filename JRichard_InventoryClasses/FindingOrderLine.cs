@@ -53,18 +53,15 @@ namespace JRichard_InventoryClasses {
                     return false;
                 }
             }
-            public bool Add(Finding finding, FindingOrder Order, int Quantity) {
+            public bool Add(int ID, Finding finding, FindingOrder Order, int Quantity) {
                 try {
                     TableAdapter = new InventoryDataSet.SP_GetByID_FindingOrderLineDataTable();
                     this.FK_Finding = finding;
                     this.FK_Order = Order;
-                    int F = 1;
-                    while (TableAdapter.FindByID(F) != null) {
-                        F++;
-                    }
+                    this.ID = ID;
                     TableAdapter.NewRow();
-                    TableAdapter.FindByID(F).FindingID = finding.GetID();
-                    TableAdapter.FindByID(F).FindingOrderID = Order.GetID();
+                    TableAdapter.FindByID(ID).FindingID = finding.GetID();
+                    TableAdapter.FindByID(ID).FindingOrderID = Order.GetID();
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

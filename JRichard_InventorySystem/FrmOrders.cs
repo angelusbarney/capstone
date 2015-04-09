@@ -51,7 +51,7 @@ namespace JRichard_InventoryUI {
                 FormOrderLine = new FrmOrderLine();
                 FormOrderLine.MdiParent = this.MdiParent;
                 FormOrderLine.FormClosed += FormOrderLine_FormClosed;
-                FormOrderLine.AcceptID(-1, AllOrders[CmbOrders.SelectedIndex]);
+                FormOrderLine.AcceptID(CmbOrders.Items.Count, AllOrders[CmbOrders.SelectedIndex]);
                 FormOrderLine.Show();
             } else {
                 FormOrderLine.Activate();
@@ -66,7 +66,7 @@ namespace JRichard_InventoryUI {
                     FormOrderLine.AcceptID(AllLines[LstOrderItems.SelectedIndex].GetID(),
                         AllOrders[CmbOrders.SelectedIndex]);
                 } else {
-                    FormOrderLine.AcceptID(-1, AllOrders[CmbOrders.SelectedIndex]);
+                    FormOrderLine.AcceptID(CmbOrders.Items.Count, AllOrders[CmbOrders.SelectedIndex]);
                 }
                 FormOrderLine.Show();
             } else {

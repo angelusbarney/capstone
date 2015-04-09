@@ -62,22 +62,19 @@ namespace JRichard_InventoryClasses {
                     return false;
                 }
             }
-            public bool Add(Finding finding, Supplier supplier, string Description, string Penalty) {
+            public bool Add(int ID, Finding finding, Supplier supplier, string Description, string Penalty) {
                 try {
                     TableAdapter = new InventoryDataSet.SP_GetByID_SLADataTable();
                     this.finding = finding;
                     this.supplier = supplier;
                     this.Description = Description;
                     this.Penalty = Penalty;
-                    int F = 1;
-                    while (TableAdapter.FindByID(F) != null) {
-                        F++;
-                    }
+                    this.ID = ID;
                     TableAdapter.NewRow();
-                    TableAdapter.FindByID(F).FindingID = finding.GetID();
-                    TableAdapter.FindByID(F).SupplierID = supplier.GetID();
-                    TableAdapter.FindByID(F).Description = Description;
-                    TableAdapter.FindByID(F).Penalty = Penalty;
+                    TableAdapter.FindByID(ID).FindingID = finding.GetID();
+                    TableAdapter.FindByID(ID).SupplierID = supplier.GetID();
+                    TableAdapter.FindByID(ID).Description = Description;
+                    TableAdapter.FindByID(ID).Penalty = Penalty;
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {
