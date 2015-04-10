@@ -70,11 +70,7 @@ namespace JRichard_InventoryClasses {
                     this.Description = Description;
                     this.Penalty = Penalty;
                     this.ID = ID;
-                    TableAdapter.NewRow();
-                    TableAdapter.FindByID(ID).FindingID = finding.GetID();
-                    TableAdapter.FindByID(ID).SupplierID = supplier.GetID();
-                    TableAdapter.FindByID(ID).Description = Description;
-                    TableAdapter.FindByID(ID).Penalty = Penalty;
+                    TableAdapter.AddSP_GetByID_SLARow(ID, finding.GetID(), supplier.GetID(), Description, Penalty);
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

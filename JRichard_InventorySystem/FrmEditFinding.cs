@@ -11,7 +11,7 @@ using JRichard_InventoryClasses;
 namespace JRichard_InventoryUI {
     public partial class FrmEditFinding : Form {
         Finding EditFinding;
-        bool Old = true;
+        bool Old = false;
         int ID;
         public FrmEditFinding() {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace JRichard_InventoryUI {
             this.ID = ID;
             EditFinding = new Finding();
             if (EditFinding.Initialize(ID)) {
-                Old = false;
+                Old = true;
                 LblFinding.Text = "Edit finding #" + ID.ToString();
                 TxtName.Text = EditFinding.GetName();
                 TxtDescription.Text = EditFinding.GetDescription();

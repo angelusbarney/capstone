@@ -59,9 +59,7 @@ namespace JRichard_InventoryClasses {
                     this.FK_Finding = finding;
                     this.FK_Order = Order;
                     this.ID = ID;
-                    TableAdapter.NewRow();
-                    TableAdapter.FindByID(ID).FindingID = finding.GetID();
-                    TableAdapter.FindByID(ID).FindingOrderID = Order.GetID();
+                    TableAdapter.AddSP_GetByID_FindingOrderLineRow(ID, finding.GetID(), Order.GetID(), Quantity);
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

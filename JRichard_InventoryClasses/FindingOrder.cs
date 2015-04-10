@@ -59,10 +59,7 @@ namespace JRichard_InventoryClasses {
                     this.Status = Status;
                     this.Notes = Notes;
                     this.ID = ID;
-                    TableAdapter.NewRow();
-                    TableAdapter.FindByID(ID).OrderDate = OrderDate;
-                    TableAdapter.FindByID(ID).Status = Status;
-                    TableAdapter.FindByID(ID).Notes = Notes;
+                    TableAdapter.AddSP_GetByID_FindingOrderRow(ID, OrderDate, Status, 1, Notes);
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

@@ -72,24 +72,9 @@ namespace JRichard_InventoryClasses {
                     SetStatus(Status);
                     SetNotes(Notes);
                     this.ID = ID;
-                    SuperAdapter.NewRow();
-                    SuperAdapter.FindById(ID).Address1 = Address1;
-                    SuperAdapter.FindById(ID).Address2 = Address2;
-                    SuperAdapter.FindById(ID).City = City;
-                    SuperAdapter.FindById(ID).Region = Region;
-                    SuperAdapter.FindById(ID).Country = Country;
-                    SuperAdapter.FindById(ID).PostalCode = PostalCode;
-                    SuperAdapter.FindById(ID).CreationDate = DateTime.Now;
-                    SuperAdapter.FindById(ID).Phone1 = Phone1;
-                    SuperAdapter.FindById(ID).Phone2 = Phone2;
-                    SuperAdapter.FindById(ID).Fax = Fax;
-                    SuperAdapter.FindById(ID).Status = Status;
-                    SuperAdapter.FindById(ID).Notes = Notes;
+                    SuperAdapter.AddSP_GetByID_ContactRow(ID, Address1, Address2, City, Region, Country, PostalCode, CreationDate, Phone1, Phone2, Fax, Status, Notes);
                     SuperAdapter.AcceptChanges();
-                    TableAdapter.NewRow();
-                    TableAdapter.FindByID(ID).Name = Name;
-                    TableAdapter.FindByID(ID).Description = Description;
-                    TableAdapter.FindByID(ID).ContactID = ID;
+                    TableAdapter.AddSP_GetByID_SupplierRow(ID, Name, Description, ID);
                     TableAdapter.AcceptChanges();
                     return true;
                 } catch {

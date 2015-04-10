@@ -15,26 +15,7 @@ namespace JRichard_InventoryUI {
         int Findings;
         public FrmFinding() {
             InitializeComponent();
-            LstFinding.Items.Clear();
-            Findings = 0;
-            AllFindings = new Finding[1];
-            AllFindings[0] = new Finding();
-            while (AllFindings[Findings].Initialize(Findings + 1)) {
-                string F = AllFindings[Findings].GetName() + " x" + AllFindings[Findings].GetQuantity().ToString();
-                LstFinding.Items.Add(F);
-                Findings++;
-                Finding[] Temp = new Finding[Findings];
-                for (int T = 0; T < Findings; T++) {
-                    Temp[T] = AllFindings[T];
-                }
-                AllFindings = new Finding[Findings + 1];
-                for (int T = 0; T < Findings; T++) {
-                    AllFindings[T] = Temp[T];
-                }
-                AllFindings[Findings] = new Finding();
-            }
-            AllFindings[Findings] = null;
-            Findings--;
+            CreateList();
         }
         private void BtnAdd_Click(object sender, EventArgs e) {
             if (FormEditFinding == null) {
@@ -49,6 +30,7 @@ namespace JRichard_InventoryUI {
         }
         void FormEditFinding_FormClosed(object sender, FormClosedEventArgs e) {
             FormEditFinding = null;
+            CreateList();
             LstFinding.SelectedIndex = -1;
         }
         private void BtnEdit_Click(object sender, EventArgs e) {
@@ -69,6 +51,28 @@ namespace JRichard_InventoryUI {
                     LstFinding.SelectedIndex = -1;
                 }
             }
+        }
+        private void CreateList() {
+            LstFinding.Items.Clear();
+            Findings = 0;
+            AllFindings = new Finding[1];
+            AllFindings[0] = new Finding();
+            while (AllFindings[Findings].Initialize(Findings + 1)) {
+                string F = AllFindings[Findings].GetName() + " x" + AllFindings[Findings].GetQuantity().ToString();
+                LstFinding.Items.Add(F);
+                Findings++;
+                Finding[] Temp = new Finding[Findings];
+                for (int T = 0; T < Findings; T++) {
+                    Temp[T] = AllFindings[T];
+                }
+                AllFindings = new Finding[Findings + 1];
+                for (int T = 0; T < Findings; T++) {
+                    AllFindings[T] = Temp[T];
+                }
+                AllFindings[Findings] = new Finding();
+            }
+            AllFindings[Findings] = null;
+            Findings--;
         }
     }
 }
