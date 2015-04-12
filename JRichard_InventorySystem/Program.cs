@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace JRichard_InventoryUI {
-    static class Program {
+    public static class Program {
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
