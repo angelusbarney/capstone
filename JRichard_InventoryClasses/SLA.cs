@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JRichard_InventoryDB;
+using JRichard_InventoryDB.InventoryDataSetTableAdapters;
 namespace JRichard_InventoryClasses {
     public class SLA {
         #region values
             InventoryDataSet.SP_GetByID_SLADataTable TableAdapter;
+            SP_GetByID_SLATableAdapter SLAAdapter;
             private int ID;
             private Finding finding;
             private Supplier supplier;
@@ -45,11 +47,11 @@ namespace JRichard_InventoryClasses {
         #endregion
         #region methods
             public SLA() {
-                //ヽ༼ຈل͜ຈ༽ﾉ
+                SLAAdapter = new SP_GetByID_SLATableAdapter();
             }
             public bool Initialize(int ID) {
                 try {
-                    TableAdapter = new InventoryDataSet.SP_GetByID_SLADataTable();
+                    TableAdapter = SLAAdapter.GetData(ID);
                     this.ID = ID;
                     this.finding = new Finding();
                     this.finding.Initialize(TableAdapter.FindByID(ID).FindingID);

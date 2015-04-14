@@ -5,10 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JRichard_InventoryDB;
+using JRichard_InventoryDB.InventoryDataSetTableAdapters;
+using System.Data.SqlClient;
 namespace JRichard_InventoryClasses {
     public class Finding {
         #region values
             InventoryDataSet.SP_GetByID_FindingDataTable TableAdapter;
+            SP_GetByID_FindingTableAdapter FindingAdapter;
             private int ID;
             private string Name;
             private string Description;
@@ -60,19 +63,23 @@ namespace JRichard_InventoryClasses {
         #endregion
         #region methods
             public Finding() {
-                //ヽ༼ຈل͜ຈ༽ﾉ
+                FindingAdapter = new SP_GetByID_FindingTableAdapter();
             }
             public bool Initialize(int ID) {
                 try {
-                    TableAdapter = new InventoryDataSet.SP_GetByID_FindingDataTable();
                     this.ID = ID;
-                    for (int R = 0; R < TableAdapter.Rows.Count; R++) {
-                        if (Convert.ToInt32(TableAdapter.Rows[R]["Id"]) == ID) {
-                            this.Name = TableAdapter.Rows[R]["Name"].ToString();
-                            this.Description = TableAdapter.Rows[R]["Description"].ToString();
-                            this.Cost = Convert.ToDouble(TableAdapter.Rows[R]["Description"]);
-                            this.ImageFile = TableAdapter.Rows[R]["ImageFile"].ToString();
-                            this.Quantity = Convert.ToInt32(TableAdapter.Rows[R]["Quantity"]);
+                    DataAccess FindingAccess = new DataAccess();
+                    string SPName = "SP_GetAll_Finding";
+                    SqlParameter[] SParams = null;
+                    DataSet dataset = DataAccess.GetDataSet(SPName, SParams);
+                    foreach (DataRow datarow in dataset.Tables["Finding"].Rows) {
+                        if (Convert.ToInt32(datarow["ID"]) == ID) {
+                            this.Name = datarow["Name"].ToString();
+                            this.Description = datarow["Description"].ToString();
+                            this.Cost = Convert.ToDouble(datarow["Cost"]);
+                            this.ImageFile = datarow["ImageFile"].ToString();
+                            this.Colour = datarow["Colour"].ToString();
+                            this.Quantity = Convert.ToInt32(datarow["Quantity"]);
                         }
                     }
                     if (this.Name != null) {

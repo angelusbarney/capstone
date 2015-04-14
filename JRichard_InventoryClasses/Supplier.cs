@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JRichard_InventoryDB;
+using JRichard_InventoryDB.InventoryDataSetTableAdapters;
 namespace JRichard_InventoryClasses {
     public class Supplier : Contact {
         #region values
             InventoryDataSet.SP_GetByID_SupplierDataTable TableAdapter;
+            SP_GetByID_SupplierTableAdapter SupplierAdapter;
             InventoryDataSet.SP_GetByID_ContactDataTable SuperAdapter;
+            SP_GetByID_ContactTableAdapter ContactAdapter;
             private string Name;
             private string Description;
         #endregion
@@ -28,12 +31,13 @@ namespace JRichard_InventoryClasses {
         #endregion
         #region methods
             public Supplier() {
-                //ヽ༼ຈل͜ຈ༽ﾉ
+                SupplierAdapter = new SP_GetByID_SupplierTableAdapter();
+                ContactAdapter = new SP_GetByID_ContactTableAdapter();
             }
             public bool Initialize(int ID) {
                 try {
-                    TableAdapter = new InventoryDataSet.SP_GetByID_SupplierDataTable();
-                    SuperAdapter = new InventoryDataSet.SP_GetByID_ContactDataTable();
+                    TableAdapter = SupplierAdapter.GetData(ID);
+                    SuperAdapter = ContactAdapter.GetData(ID);
                     this.Name = TableAdapter.FindByID(ID).Name;
                     this.Description = TableAdapter.FindByID(ID).Description;
                     int ContactID = TableAdapter.FindByID(ID).ContactID;

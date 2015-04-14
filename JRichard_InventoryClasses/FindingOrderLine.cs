@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JRichard_InventoryDB;
+using JRichard_InventoryDB.InventoryDataSetTableAdapters;
 namespace JRichard_InventoryClasses {
     public class FindingOrderLine {
         #region values
-        InventoryDataSet.SP_GetByID_FindingOrderLineDataTable TableAdapter;
+            InventoryDataSet.SP_GetByID_FindingOrderLineDataTable TableAdapter;
+            SP_GetByID_FindingOrderLineTableAdapter OrderLineAdapter;
             private int ID;
             private Finding FK_Finding;
             private FindingOrder FK_Order;
@@ -38,11 +40,11 @@ namespace JRichard_InventoryClasses {
         #endregion
         #region methods
             public FindingOrderLine() {
-                //ヽ༼ຈل͜ຈ༽ﾉ
+                OrderLineAdapter = new SP_GetByID_FindingOrderLineTableAdapter();
             }
             public bool Initialize(int ID) {
                 try {
-                    TableAdapter = new InventoryDataSet.SP_GetByID_FindingOrderLineDataTable();
+                    TableAdapter = OrderLineAdapter.GetData(ID);
                     this.ID = ID;
                     this.FK_Finding = new Finding();
                     this.FK_Finding.Initialize(TableAdapter.FindByID(ID).FindingID);

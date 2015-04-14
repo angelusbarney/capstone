@@ -1,0 +1,18 @@
+public static List<CompanyContact> getAllCompanyContacts()
+{
+	DataAccess objDA = new DataAccess();
+	string storedProcedureName = "sp_GetAllCompanyContacts";
+	SqlParameter[] sps = null;
+	DataSet ds = DataAccess.GetDataSet(storedProcedureName, sps);
+	List<CompanyContact> compContacts = new List<CompanyContact>();
+	foreach (DataRow dr in ds.Tables[0].Rows)
+	{
+		CompanyContact tempCon = new CompanyContact();
+		tempCon.id = System.Convert.ToInt32(dr["id"]);
+		tempCon.firstName = dr["firstName"].ToString();
+		tempCon.lastName = dr["lastName"].ToString();
+		
+		compContacts.Add(tempCon);
+	}
+	return compContacts;
+}//end getallccompcontacts
